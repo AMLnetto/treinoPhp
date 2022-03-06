@@ -8,6 +8,22 @@ $categorias [] = 'Idoso';
 $nome = $_POST['nome'];
 $idade = $_POST['idade'];
 
+if(empty($nome)){
+    echo "NOME NAO PODE SER VAZIO";
+    return;
+}
+if(strlen($nome) < 3){
+    echo"NOME NAO PODE SER TAO CURTO";
+    return;
+}
+if(strlen($nome) > 40){
+    echo"NOME NAO PODE SER TAO LONGO";
+    return;
+}
+if(!is_numeric($idade)){
+    echo "INSIRA UMA IDADE VALIDA";
+    return;
+}
 
 
 if ($idade >= 0 && $idade <= 3) {
